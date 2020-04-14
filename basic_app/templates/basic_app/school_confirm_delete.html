@@ -1,0 +1,12 @@
+{% extends "basic_app/basic_app_base.html" %}
+{% block body_block %}
+
+<h1>Delete {{ school.name }}?</h1><!--This 'school' is the the context_object_name,you can manually set this in views.py, by default it will be the lowercase name of you model name-->
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Delete">
+    <a class="btn btn-warning" href="{%url 'basic_app:details' pk=school.pk %}">Cancel</a>
+</form>
+
+
+{% endblock %}
